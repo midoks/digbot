@@ -1,0 +1,21 @@
+title: zzz
+frequency: 3
+dirfilter:
+- tmp
+- .git
+- public
+- scripts
+- vendor
+- logs
+- templates
+ext:
+- go
+enablerun: true
+action:
+  before:
+  - find . -name ".DS_Store" -print -delete
+  after:
+  - ./digbot scan -i 127.0.0.1 &
+  exit:
+  - echo "exit"
+link: https://github.com/midoks/digbot

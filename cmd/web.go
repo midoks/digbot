@@ -4,7 +4,7 @@ import (
 	"github.com/urfave/cli"
 )
 
-var Run = cli.Command{
+var Web = cli.Command{
 	Name:        "web",
 	Usage:       "This command starts web service",
 	Description: `Start Web Service`,

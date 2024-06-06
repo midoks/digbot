@@ -16,7 +16,8 @@ func main() {
 	app.Usage = "digbot service"
 	app.Version = "0.0.1"
 	app.Commands = []cli.Command{
-		cmd.Run,
+		cmd.Web,
+		cmd.Scan,
 	}
 
 	if err := app.Run(os.Args); err != nil {
