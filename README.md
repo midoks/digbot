@@ -1,5 +1,5 @@
-### 全网扫描机器人
+### digbot
 
 ```
-
+Simple IP scanning robot
 ```
