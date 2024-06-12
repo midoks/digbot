@@ -4,9 +4,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/urfave/cli"
-
 	"digbot/cmd"
+
+	"github.com/urfave/cli"
 )
 
 func main() {

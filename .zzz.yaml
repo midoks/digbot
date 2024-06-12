@@ -1,5 +1,5 @@
 title: zzz
-frequency: 3
+frequency: 1
 dirfilter:
 - tmp
 - .git
@@ -15,7 +15,7 @@ action:
   before:
   - find . -name ".DS_Store" -print -delete
   after:
-  - ./digbot scan -i 127.0.0.1 &
+  - ./digbot scan -i 127.0.0.1
   exit:
   - echo "exit"
 link: https://github.com/midoks/digbot
