@@ -14,8 +14,10 @@ enablerun: true
 action:
   before:
   - find . -name ".DS_Store" -print -delete
+  - go mod tidy
   after:
   - ./digbot scan -i 127.0.0.1
+  - ./digbot web &
   exit:
   - echo "exit"
 link: https://github.com/midoks/digbot
