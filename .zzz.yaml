@@ -14,10 +14,11 @@ enablerun: true
 action:
   before:
   - find . -name ".DS_Store" -print -delete
+  - ps -ef|grep 'digbot web'| grep -v grep | awk '{print $2}' | xargs kill -9
   - go mod tidy
   after:
   - ./digbot scan -i 127.0.0.1
   - ./digbot web &
   exit:
-  - echo "exit"
+  - ps -ef|grep 'digbot web'| grep -v grep | awk '{print $2}' | xargs kill -9
 link: https://github.com/midoks/digbot
