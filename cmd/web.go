@@ -1,9 +1,14 @@
 package cmd
 
 import (
+	
 	"github.com/gin-gonic/gin"
 	"github.com/urfave/cli"
+
+	"github.com/swaggo/gin-swagger" // gin-swagger middleware
+	"github.com/swaggo/files" // swagger embed files
 )
+
 
 var Web = cli.Command{
 	Name:        "web",
@@ -22,6 +27,8 @@ func WebRun(c *cli.Context) error {
 			"message": "pong",
 		})
 	})
+
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.Run(":8090") // 监听并在 0.0.0.0:8080 上启动服务
 	return nil
 }
