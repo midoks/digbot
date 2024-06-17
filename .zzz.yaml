@@ -17,6 +17,7 @@ action:
   - ps -ef|grep 'digbot web'| grep -v grep | awk '{print $2}' | xargs kill -9
   - go mod tidy
   after:
+  - ./swag init
   - ./digbot scan -i 127.0.0.1
   - ./digbot web &
   exit:
