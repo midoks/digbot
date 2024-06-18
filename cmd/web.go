@@ -41,14 +41,25 @@ var Web = cli.Command{
 // @externalDocs.url          https://swagger.io/resources/open-api/
 func WebRun(c *cli.Context) error {
 	r := gin.Default()
-	r.GET("/add_task", AddTask)
-
+	
+	r.GET("/api/add_task", AddTask)
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	r.Run(":8090") // 监听并在 0.0.0.0:8080 上启动服务
 	return nil
 }
 
-
+// @Summary 更新文章
+// @Produce json
+// @Param tag_id body string false "标签ID"
+// @Param title body string false "文章标题"
+// @Param desc body string false "文章简述"
+// @Param cover_image_url body string false "封面图片地址"
+// @Param content body string false "文章内容"
+// @Param modified_by body string true "修改者"
+// @Success 200 {object} Article "成功"
+// @Failure 400 {object} string "请求错误"
+// @Failure 500 {object} string "内部错误"
+// @Router /api/v1/articles/{id} [put]
 func AddTask(c *gin.Context){
 	c.JSON(200, gin.H{
 		"message": "pong",
