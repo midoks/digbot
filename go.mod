@@ -7,6 +7,7 @@ require (
 	github.com/huin/asn1ber v0.0.0-20120622192748-af09f62e6358
 	github.com/icodeface/tls v0.0.0-20230910023335-34df9250cd12
 	github.com/lcvvvv/gonmap v1.3.4
+	github.com/lcvvvv/simplehttp v0.1.1
 	github.com/lunixbochs/struc v0.0.0-20200707160740-784aaebc1d40
 	github.com/miekg/dns v1.1.59
 	github.com/swaggo/files v1.0.1

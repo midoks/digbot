@@ -4,11 +4,12 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"kscan/lib/misc"
 	"os"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"digbot/lib/misc"
 )
 
 var (
